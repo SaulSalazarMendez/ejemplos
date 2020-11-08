@@ -1,15 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Inicio</title>
-</head>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    /*define los estilos del componente*/
+    .hola-mundo{
+    color: red;
+    }
+    
+    .espacio{
+        min-height: 10px;
+    }
+    .cls-imagen{
+    width: 100%;
+    border-radius: 5px;
+    }
+</style>
+
 <body>
-    <div class="w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button">Home</a>
-        <a href="./ide/index.html" class="w3-bar-item w3-button">Ide</a>        
-      </div>
+    <div class="w3-bar w3-white">                
+        <div class="w3-dropdown-hover w3-right">
+            <button class="w3-button  w3-white"><i class="fa fa-th"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-round" style="right:10px;">
+                <div class="w3-center w3-padding" style="">
+                    <a href="./ide">
+                        <i class="fa fa-html5 w3-text-blue w3-xxlarge"></i>
+                        <h5>Ide</h5>
+                    </a>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="w3-row imagen">
+
+        <div class="w3-col espacio s2 m2 l2" propiedades="" espacio-componente=""></div>
+        <div class="w3-col w3-center s8 m8 l8" propiedades="" contenido-componente="" style="margin-top: 10em;">
+            <img src="./saul.png" class="" propiedades="" style="width: 12em;">
+        </div>
+    </div>
+    <div class="">
+        <div propiedades="" class="w3-row w3-margin-top">
+            <div class="w3-col s1 m2 l3 espacio"></div>
+            <div class="w3-col s10 m8 l6">
+                <input class="w3-input w3-border w3-border-blue" id="buscador" style="outline: none;">
+            </div>
+        </div>
+    </div>
+    <script>
+        //variables
+        let mensaje = 'Hola mundo';
+        //funciones
+        function addListeners() {
+            let con = 1;
+            let buscador = document.querySelector('#buscador');
+            buscador.focus();
+            let texto = [
+                'Hola soy Saúl',
+                'Soy un desarrollador Web',
+                'Experto en el uso de tecnologías web:',
+                //'Vue, Angular, Web componentes(vanilla), etc.'
+            ];
+            for (let linea of texto) {
+                con = animaTexto(linea, con);
+                con += 10;
+                con = animaLimpiar(linea, con);
+            }
+            con = animaTexto('Vue, Angular, Web componentes(vanilla), etc.', con);
+        }
+
+        function animaTexto(texto, con) {
+             let buscador = document.querySelector('#buscador');
+            for (let letra of texto) {
+                siguienteTexto(buscador, letra, con++);
+            }
+            return con;
+        }
+
+        function animaLimpiar(texto, con) {
+             let buscador = document.querySelector('#buscador');
+            let n = texto.length;
+            let cad = texto;
+            for (let i = 0; i <= n; i++) {
+                setTimeout(tik => {
+                    buscador.value = cad.substr(0, n - i);
+                }, 100 * (con++));
+            }
+            return con;
+        }
+
+        function siguienteTexto(buscador, letra, t) {
+            setTimeout(tik => {
+                buscador.value += letra;
+            }, 100 * t);
+        }
+
+        function init() {
+            addListeners();
+        }
+        init();
+    </script>
 </body>
+
 </html>
