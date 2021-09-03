@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta property="og:url" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Try coding">
+<meta property="og:description" content="Es una plataforma para probar codigo web ">
+<meta property="og:image" content="preview.d71f43f0.svg">
+    <title>try coding</title>
+    <link rel="stylesheet" href="main.8dc5b4be.css">      
+    <link rel="shortcut icon" href="html.d6a1e9b4.svg" type="image/svg">
+</head>
+<style>header{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        background-color: #eee;
+    }
+    header .seccion-titulo {
+        width: 50%;
+        padding-left: 10px;        
+    }
+    .seccion-titulo .titulo {
+        font-size: x-large;
+        font-weight: bold;
+    }
+    header .seccion-acciones{
+        width: 50%;
+        text-align: right;
+        padding: 5px;
+    }
+    .seccion-titulo input{
+        border: none;
+        outline: none;
+        background-color: #eee;
+        width: calc(100% - 10px);        
+    }
+    button.accion{
+        border-radius: 5px;
+        height: 40px;
+    }</style>
+<body>
+<header>
+    <seccion class="seccion-titulo">
+        <input type="text" class="titulo" value="Titulo"><br>
+        <input class="autor" value="autor">
+    </seccion>
+    <seccion class="seccion-acciones">   
+        <button class="accion" id="ayuda">Comandos</button>
+        <button class="accion" id="guardar">Guardar</button>
+        <button class="accion" id="compartir">Compartir</button>
+    </seccion>
+</header>
+<div id="editor">    
+    <editor-archivos-codejar id="tabs-jar"></editor-archivos-codejar>
+    <div id="panel">      
+        <div class="vista-previa"></div>
+    </div>    
+</div>
+<div class="consola">
+</div>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <script src="main.286524d0.js"></script>
+</body>
+</html>
