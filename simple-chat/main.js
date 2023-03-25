@@ -1,6 +1,6 @@
 import {contesto} from './contesto.js';
 
-const api_key = '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';
+const api_key = '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';
 
 
 
